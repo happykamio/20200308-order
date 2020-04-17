@@ -42,7 +42,7 @@
 						<a class="nav-link js-scroll-trigger" href="index.html#page-top">回首頁</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="http://blog.ugm.com.tw/cart1/">點餐範例1</a>
+						<a class="nav-link js-scroll-trigger" href="https://happykamio.github.io/20200308-order/index.html">點餐範例</a>
 					</li>
 				</ul>
 			</div>
@@ -52,8 +52,12 @@
 	<div class="container" style="margin-top: 120px;">
 		<h1 class="text-center">測試點餐訂單</h1>
 
-		<form role="form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeMYT9EQ2hiDS_ZxlOZxBfamFwnE4AUlSN8w1AEXoB2anmF9w/formResponse"
-		 method="post" id="myForm" novalidate="novalidate">
+		<!-- 表單返回頁，記得在表單加「 target='returnWin' 」 -->
+		<iframe name="returnWin" style="display: none;" onload="this.onload=function(){window.location='ok.html'}"></iframe>
+
+		<form target='returnWin' role="form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeMYT9EQ2hiDS_ZxlOZxBfamFwnE4AUlSN8w1AEXoB2anmF9w/formResponse"
+		 method="post" id="myForm">
+
 			<div class="row">
 				<!--分類-->
 				<div class="col-sm-3">
@@ -170,6 +174,7 @@
 		}
 	</style>
 	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+
 	<script>
 		$(function () {
 			$("#myForm").validate({
